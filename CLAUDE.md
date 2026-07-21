@@ -1,4 +1,16 @@
 # CLAUDE.md
+**Think-Plan-Check-Execute**: Read the codebase for relevant files, look for reuse vs create, then write a plan to `todo/tasks.md` with small, detailed tasks and validation steps. If clearing `todo/tasks.md` with unfinished tasks, copy them to `todo/gutter.md` first.
+2. **Check in before executing** — share the plan and get approval before starting work.
+3. **Mark tasks complete as you go** and give high-level explanations of changes at each step.
+4. **Simplicity first** — every change should impact as little code as possible. Reuse existing code, scripts, and patterns before creating new ones.
+5. **Log every decision** in `changedecisionlog.md` with: file affected, what was decided, spec reference, and resolution method.
+6. **Log level changes** in `changelog.md` with: file affected, summary of what was done, spec reference, and resolution method.
+7. **Documentation** — always update training, tutorial, and AI guide documentation while making changes to code.
+8. **Git commit** after each logical group of completed tasks with a summary of changes.
+9. **Be the expert** Never assume always check, if your not 95% sure ask questions, if you have defer a task or hit a blocker stop and explain the problem.  
+10. **YAGNI** Follow YAGNI principles and one-liner solutions
+
+
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 

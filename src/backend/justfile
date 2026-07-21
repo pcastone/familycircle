@@ -1,0 +1,39 @@
+# familycircle backend — run `just` to list recipes
+play := "../playground"
+bindir := play / "bin"
+
+default:
+    @just --list
+
+# build every command under cmd/ into playground/bin
+build:
+    #!/usr/bin/env sh
+    set -e
+    for d in cmd/*/; do
+        name=$(basename "$d")
+        go build -o "{{bindir}}/$name" "./cmd/$name"
+    done
+
+# run one command, e.g. `just run be_server`
+run cmd: build config
+    {{bindir}}/{{cmd}}
+
+# copy config/ into the playground config dir
+config:
+    mkdir -p {{play}}/config
+    cp -R config/. {{play}}/config/
+
+test:
+    go test ./...
+
+fmt:
+    go fmt ./...
+
+vet:
+    go vet ./...
+
+tidy:
+    go mod tidy
+
+clean:
+    rm -rf {{bindir}}
