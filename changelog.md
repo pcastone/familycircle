@@ -15,3 +15,9 @@
   (ADR-008), `docs/platform-spec.md` (§2, §6.4, §7, §9, §12, §13, §14); `justfile`
   for backend targets. Resolution: grounded every rule in the specs/justfile; created
   the empty `src/frontend`, `src/mobile/ios`, `src/mobile/droid` dirs.
+- **`docs/platform-spec.md`** — Reconciled the §2 repo-layout block to the `src/`
+  directory convention: `/clients/app/`→`src/mobile/`, `/clients/web/`→`src/frontend/`,
+  and backend paths re-rooted under `src/backend/` for coherence. Summary: doc now
+  matches the on-disk layout. Spec reference: root `CLAUDE.md` conventions;
+  `src/backend/go.mod`. Resolution: owner-requested; scaffold notes updated to drop
+  the old `/clients/*` names.

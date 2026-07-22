@@ -33,21 +33,21 @@ Audience: development agents. Normative language: MUST / MUST NOT / SHOULD.
 ## 2. Repository layout
 
 ```
-/cmd/server/            main.go — wires modules, serves HTTP
-/internal/identity/     persons, auth, devices, sessions
-/internal/circle/       care circles, memberships, roles, invitations
-/internal/record/       tier 1–3 structured records (contacts, insurance, meds…)
-/internal/incident/     incident log, check-ins (append-only)
-/internal/feed/         posts, comments (tier 1–2)
-/internal/sync/         changelog, push/pull endpoints, HLC
-/internal/enclave/      tier-4 store. SEALED MODULE — see §9
-/internal/notify/       fan-out: push, email
-/internal/audit/        immutable read/write audit trail
-/internal/platform/     db pool, KMS client, config, middleware
-/migrations/            sql-migrate / goose, numbered, forward-only
-/gen/                   sqlc output. NEVER hand-edited
-/clients/app/           Flutter (two entrypoints: primary, extended)
-/clients/web/           SvelteKit
+src/backend/cmd/be_server/     main.go — wires modules, serves HTTP
+src/backend/internal/identity/ persons, auth, devices, sessions
+src/backend/internal/circle/   care circles, memberships, roles, invitations
+src/backend/internal/record/   tier 1–3 structured records (contacts, insurance, meds…)
+src/backend/internal/incident/ incident log, check-ins (append-only)
+src/backend/internal/feed/     posts, comments (tier 1–2)
+src/backend/internal/sync/     changelog, push/pull endpoints, HLC
+src/backend/internal/enclave/  tier-4 store. SEALED MODULE — see §9
+src/backend/internal/notify/   fan-out: push, email
+src/backend/internal/audit/    immutable read/write audit trail
+src/backend/internal/platform/ db pool, KMS client, config, middleware
+src/backend/migrations/        sql-migrate / goose, numbered, forward-only
+src/backend/gen/               sqlc output. NEVER hand-edited
+src/mobile/                    Flutter (two entrypoints: primary, extended)
+src/frontend/                  SvelteKit
 ```
 
 Module rules (enforced, not advisory):

@@ -17,7 +17,22 @@
   rather than assuming (CLAUDE.md rule #9). Owner chose "Honor Flutter (one
   codebase)." Nested `CLAUDE.md` files written accordingly; the two platform dirs get
   thin stubs that point back to `src/mobile/CLAUDE.md`.
-- **Open item (not resolved):** Broader path drift remains — the spec uses
-  `/clients/app/` + `/clients/web/`, while the repo convention uses `src/mobile/*` +
-  `src/frontend/`. Left as-is for now (scaffolds use the repo convention). Reconcile
-  in a future ADR if desired.
+- **Open item (RESOLVED 2026-07-22):** Path drift reconciled — see next entry.
+
+## 2026-07-22 — Reconcile spec repo layout to the `src/` convention
+- **Files affected:** `docs/platform-spec.md` (§2 repo-layout block);
+  note-only touch-ups in `src/mobile/CLAUDE.md`, `src/frontend/CLAUDE.md`.
+- **Decision:** The repo directory convention wins. Updated the spec's layout block
+  so all paths sit under `src/`: `/clients/app/` → `src/mobile/`, `/clients/web/` →
+  `src/frontend/`. For coherence in the same block, backend paths were re-rooted to
+  match on-disk reality: `/cmd/server/` → `src/backend/cmd/be_server/`,
+  `/internal/*` → `src/backend/internal/*`, `/migrations/` → `src/backend/migrations/`,
+  `/gen/` → `src/backend/gen/`.
+- **Spec reference:** root `CLAUDE.md` directory conventions (`src/backend`,
+  `src/frontend`, `src/mobile/*`); on-disk `src/backend/go.mod`.
+- **Resolution method:** Human owner explicitly requested the spec use `src/mobile/*`
+  and `src/frontend` (the sign-off the ADR header requires). Backend re-root done for
+  block coherence and flagged to the owner.
+- **Open item:** `docs/platform-spec.md` §11 still references `/seed/synthetic/`; the
+  seed-generator location isn't established in the repo conventions, so it was left
+  unchanged. Resolve when the seed layout is decided.

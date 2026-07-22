@@ -2,8 +2,8 @@
 
 Scoped guidance for `src/mobile/`. **Additive to the root `CLAUDE.md`** — root
 process rules still apply. Architecture is settled in `docs/adr.md` (ADR-008,
-ADR-009, ADR-011) and `docs/platform-spec.md` (§6.4, §7, §13). The app is the
-spec's `/clients/app/`.
+ADR-009, ADR-011) and `docs/platform-spec.md` (§6.4, §7, §13). The app lives at
+`src/mobile/` (spec §2 repo layout).
 
 > Note: empty scaffold. The stack below is the settled choice; nothing is built yet.
 

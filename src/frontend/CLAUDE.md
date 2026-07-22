@@ -3,7 +3,7 @@
 Scoped guidance for `src/frontend/`. **Additive to the root `CLAUDE.md`** — root
 process rules still apply; this file adds web-client specifics. Architecture is
 settled in `docs/adr.md` (ADR-008) and `docs/platform-spec.md` (§12) — the web
-client is the spec's `/clients/web/`.
+client lives at `src/frontend/` (spec §2 repo layout).
 
 > Note: this dir is empty scaffold. The stack below is the settled choice; nothing
 > is built yet.
